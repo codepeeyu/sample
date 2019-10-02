@@ -1,0 +1,22 @@
+<h1>Items index</h1>
+
+<table>
+  <tr>
+    <th>Item name</th>
+    <th>Price(Rs)</th>
+    <th>Actions</th>
+  </tr>
+  <% @items.each do |item| %>
+  <tr>
+    <th><%= item.name %></th>
+    <th><%= item.price %></th>
+    <th>
+    <%= link_to "Show item", item_path(item) %>
+    <%= link_to "Edit item", edit_item_path(item) %>
+    <%= link_to "Delete item", item_path(item), method: :delete, data: { confirm: "Are you sure ?" } %>
+    </th>
+  </tr>
+  <% end %>
+</table>
+
+
